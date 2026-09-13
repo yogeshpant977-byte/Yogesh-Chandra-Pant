@@ -1,0 +1,25 @@
+{
+  "name": "sap-b1-mcp-connector",
+  "version": "0.1.0",
+  "description": "MCP server connecting to SAP Business One (Service Layer + HANA SQL) for Him Electronics (ZZZ_HPL_LIVE_29082026)",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@sap/hana-client": "^2.20.0",
+    "dotenv": "^16.4.5",
+    "node-fetch": "^3.3.2",
+    "https": "^1.0.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsx": "^4.16.0",
+    "typescript": "^5.5.0"
+  }
+}

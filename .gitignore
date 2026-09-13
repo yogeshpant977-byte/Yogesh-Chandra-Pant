@@ -1,0 +1,12 @@
+node_modules/
+dist/
+*.log
+.env
+
+# .NET
+bin/
+obj/
+*.user
+
+# SAP B1 SDK interop DLLs (proprietary, not redistributable)
+sap-b1-ui-addon/**/lib/*.dll

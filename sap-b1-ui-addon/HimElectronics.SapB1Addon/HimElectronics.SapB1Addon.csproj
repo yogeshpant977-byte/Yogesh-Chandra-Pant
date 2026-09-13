@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <!-- SAP B1 UI API (b1uiapi.dll / SAPbouiCOM.dll) and DI API (SAPbobsCOM.dll)
+         are COM interop assemblies shipped with the SAP B1 client SDK.
+         Install the "SDK" component from the B1 client installer, then
+         point these HintPaths at the local SDK folder (typically
+         C:\Program Files (x86)\SAP\SAP Business One\SDK\Interop). -->
+    <AssemblyName>HimElectronics.SapB1Addon</AssemblyName>
+    <RootNamespace>HimElectronics.SapB1Addon</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Platforms>x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Interop.SAPbouiCOM">
+      <HintPath>lib\Interop.SAPbouiCOM.dll</HintPath>
+      <EmbedInteropTypes>false</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.SAPbobsCOM">
+      <HintPath>lib\Interop.SAPbobsCOM.dll</HintPath>
+      <EmbedInteropTypes>false</EmbedInteropTypes>
+    </Reference>
+  </ItemGroup>
+
+</Project>

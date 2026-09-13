@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Registers this UI Add-on with SAP Business One (Administration ->
+  Add-Ons -> Add-On Administration -> Import). At runtime the B1 client
+  launches AddOnExeFileName and passes the active connection string as
+  the first command-line argument.
+-->
+<AddOn>
+  <Name>Him Electronics SAP B1 Add-on</Name>
+  <Description>Custom screens and workflows for Him Electronics (ZZZ_HPL_LIVE_29082026)</Description>
+  <Company>Him Electronics</Company>
+  <Version>0.1.0</Version>
+  <AddOnExeFileName>HimElectronics.SapB1Addon.exe</AddOnExeFileName>
+  <StartOnSystemInit>false</StartOnSystemInit>
+  <ApplicationType>Windows</ApplicationType>
+</AddOn>
