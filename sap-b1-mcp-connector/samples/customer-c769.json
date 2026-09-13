@@ -1,0 +1,36 @@
+{
+  "_comment": "Draft Customer master for review — CardCode C769. Confirm/correct before this is posted to ZZZ_HPL_LIVE_29082026 (BusinessPartners post LIVE, not as draft).",
+
+  "CardCode": "C769",
+  "CardName": "Venkat",
+  "CardType": "cCustomer",
+  "Currency": "NPR",
+  "Phone1": "1234567890",
+  "ContactPerson": "VENKAT",
+  "CreditLimit": 2000.0,
+  "PriceListNum": 1,
+
+  "BPAddresses": [
+    {
+      "AddressName": "Bill To",
+      "AddressType": "bo_BillTo",
+      "City": "Kathmandu",
+      "Country": "NP"
+    },
+    {
+      "AddressName": "Ship To",
+      "AddressType": "bo_ShipTo",
+      "City": "Kathmandu",
+      "Country": "NP"
+    }
+  ],
+
+  "ContactEmployees": [
+    {
+      "Name": "VENKAT",
+      "Phone1": "1234567890"
+    }
+  ],
+
+  "BPBankAccounts": []
+}
