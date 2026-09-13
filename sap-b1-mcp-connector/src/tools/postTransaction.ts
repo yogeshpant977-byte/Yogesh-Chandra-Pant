@@ -50,7 +50,8 @@ export async function handlePostTransaction(args: { objectType: string; body: Re
     .object({ objectType: z.string().min(1), body: z.record(z.unknown()) })
     .parse(args);
 
-  const isLive = config.liveObjectTypes.includes(parsed.objectType);
+  const isLive =
+    config.liveObjectTypes.includes(parsed.objectType) || !config.serviceLayer.postAsDraft;
 
   if (isLive) {
     const created = await serviceLayerClient.post(`/${parsed.objectType}`, parsed.body);

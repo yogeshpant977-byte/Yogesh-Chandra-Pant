@@ -10,23 +10,26 @@ function required(name: string, fallback?: string): string {
 
 export const config = {
   serviceLayer: {
-    baseUrl: required("SL_BASE_URL"),
-    companyDb: required("SL_COMPANY_DB", "ZZZ_HPL_LIVE_29082026"),
-    username: required("SL_USERNAME"),
-    password: required("SL_PASSWORD"),
-    tlsRejectUnauthorized: (process.env.SL_TLS_REJECT_UNAUTHORIZED ?? "true") !== "false",
+    baseUrl: required("B1SL_BASE_URL"),
+    companyDb: required("B1_COMPANY_DB", "ZZZ_HPL_LIVE_29082026"),
+    username: required("B1_USERNAME"),
+    password: required("B1_PASSWORD"),
+    tlsRejectUnauthorized: (process.env.B1SL_TLS_REJECT_UNAUTHORIZED ?? "true") !== "false",
+    // Safety switch: when true (default), everything except master data
+    // (BusinessPartners/Items) is created as a Draft, not posted live.
+    postAsDraft: (process.env.B1SL_POST_AS_DRAFT ?? "true") !== "false",
   },
   hana: {
+    enabled: (process.env.HANA_ENABLED ?? "false") === "true",
     host: process.env.HANA_HOST ?? "",
     port: Number(process.env.HANA_PORT ?? "30015"),
-    uid: process.env.HANA_UID ?? "",
-    pwd: process.env.HANA_PWD ?? "",
+    uid: process.env.HANA_USER ?? "",
+    pwd: process.env.HANA_PASSWORD ?? "",
     schema: process.env.HANA_SCHEMA ?? "ZZZ_HPL_LIVE_29082026",
   },
-  // Object types allowed to be posted LIVE (not as Draft). Keep this list
-  // short and deliberate — everything else is forced into DocObjectCode
-  // Drafts (oDrafts / Drfx) as a safety net for an AI-driven connector.
-  liveObjectTypes: (process.env.SL_LIVE_OBJECT_TYPES ?? "BusinessPartners")
+  // Object types always allowed to be posted LIVE regardless of
+  // B1SL_POST_AS_DRAFT — master data, not ledger-affecting documents.
+  liveObjectTypes: (process.env.SL_LIVE_OBJECT_TYPES ?? "BusinessPartners,Items")
     .split(",")
     .map((s) => s.trim())
     .filter(Boolean),
