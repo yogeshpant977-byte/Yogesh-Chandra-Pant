@@ -1,0 +1,117 @@
+{
+  "_comment": "Sample SAP B1 Customer master payload for review before posting via sap-b1-post-transaction (objectType: BusinessPartners). Replace every placeholder value before use. Fields grouped by SAP B1 tab for clarity.",
+
+  "_General_tab": {
+    "CardCode": "C00001",
+    "CardName": "Him Electronics Pvt. Ltd.",
+    "CardType": "cCustomer",
+    "GroupCode": 100,
+    "Currency": "NPR",
+    "Valid": "tYES",
+    "Frozen": "tNO",
+    "EmailAddress": "accounts@customer-domain.com",
+    "Phone1": "+977-1-4000000",
+    "Phone2": "+977-98XXXXXXXX",
+    "Cellular": "+977-98XXXXXXXX",
+    "Website": "https://www.customer-domain.com",
+    "FederalTaxID": "PAN/VAT-XXXXXXXXX",
+    "ContactPerson": "Contact Full Name"
+  },
+
+  "_Address_tabs": {
+    "BPAddresses": [
+      {
+        "AddressName": "Bill To",
+        "AddressType": "bo_BillTo",
+        "Street": "Street / Building",
+        "City": "Kathmandu",
+        "County": "Bagmati",
+        "Country": "NP",
+        "ZipCode": "44600"
+      },
+      {
+        "AddressName": "Ship To",
+        "AddressType": "bo_ShipTo",
+        "Street": "Warehouse / Delivery address",
+        "City": "Kathmandu",
+        "County": "Bagmati",
+        "Country": "NP",
+        "ZipCode": "44600"
+      }
+    ]
+  },
+
+  "_ContactPersons_tab": {
+    "ContactEmployees": [
+      {
+        "Name": "Contact Full Name",
+        "Position": "Purchase Manager",
+        "Phone1": "+977-98XXXXXXXX",
+        "E_Mail": "purchase@customer-domain.com"
+      }
+    ]
+  },
+
+  "_PaymentTerms_tab": {
+    "PayTermsGrpCode": -1,
+    "CreditLimit": 500000.0,
+    "CommitmentLimit": 0.0,
+    "GroupNumber": 0,
+    "PriceListNum": 1
+  },
+
+  "_Accounting_tab": {
+    "VatGroup": "STD",
+    "DebitorAccount": ""
+  },
+
+  "_BankAccounts_tab": {
+    "BPBankAccounts": [
+      {
+        "BankCode": "Bank Name",
+        "AccountNumber": "0000000000",
+        "BranchNumber": "Branch Name"
+      }
+    ]
+  },
+
+  "_full_serviceLayer_payload_shape_for_posting": {
+    "CardCode": "C00001",
+    "CardName": "Him Electronics Pvt. Ltd.",
+    "CardType": "cCustomer",
+    "GroupCode": 100,
+    "Currency": "NPR",
+    "EmailAddress": "accounts@customer-domain.com",
+    "Phone1": "+977-1-4000000",
+    "FederalTaxID": "PAN/VAT-XXXXXXXXX",
+    "PayTermsGrpCode": -1,
+    "CreditLimit": 500000.0,
+    "PriceListNum": 1,
+    "BPAddresses": [
+      {
+        "AddressName": "Bill To",
+        "AddressType": "bo_BillTo",
+        "Street": "Street / Building",
+        "City": "Kathmandu",
+        "Country": "NP",
+        "ZipCode": "44600"
+      },
+      {
+        "AddressName": "Ship To",
+        "AddressType": "bo_ShipTo",
+        "Street": "Warehouse / Delivery address",
+        "City": "Kathmandu",
+        "Country": "NP",
+        "ZipCode": "44600"
+      }
+    ],
+    "ContactEmployees": [
+      {
+        "Name": "Contact Full Name",
+        "Position": "Purchase Manager",
+        "Phone1": "+977-98XXXXXXXX",
+        "E_Mail": "purchase@customer-domain.com"
+      }
+    ]
+  }
+}
